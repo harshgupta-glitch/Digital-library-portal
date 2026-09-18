@@ -1,1 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Login | DigiLibrary</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+    <div class="logo">
+        <i class="fa-solid fa-book-open"></i>
+        DigiLibrary
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="categories.html">Categories</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <div class="nav-right">
+        <button id="darkMode">🌙</button>
+    </div>
+
+</header>
+
+
+<!-- LOGIN -->
+
+<section class="login-page">
+
+    <div class="login-box">
+
+        <div class="login-icon">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <h1 id="formTitle">Welcome Back!</h1>
+
+        <p id="formSubtitle">
+            Login to access your digital library
+        </p>
+
+
+        <form id="loginForm">
+
+            <!-- NAME - SIGN UP ONLY -->
+
+            <div class="input-box signup-field">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input
+                type="text"
+                id="name"
+                placeholder="Full Name">
+
+            </div>
+
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required>
+
+            </div>
+
+
+            <button type="submit" class="login-submit">
+                Login
+            </button>
+
+        </form>
+
+
+        <p class="switch-text">
+
+            Don't have an account?
+
+            <button id="switchForm">
+                Sign Up
+            </button>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>📚 DigiLibrary</h3>
+
+    <p>
+        Making knowledge accessible to everyone.
+    </p>
+
+    <hr>
+
+    <p>
+        © 2026 DigiLibrary | Digital Library Portal
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+const loginForm = document.getElementById("loginForm");
+const switchForm = document.getElementById("switchForm");
+
+const formTitle = document.getElementById("formTitle");
+const formSubtitle = document.getElementById("formSubtitle");
+
+const signupField =
+document.querySelector(".signup-field");
+
+let isSignup = false;
+
+
+/* LOGIN / SIGN UP SWITCH */
+
+switchForm.addEventListener("click", function(){
+
+    isSignup = !isSignup;
+
+    if(isSignup){
+
+        formTitle.innerText = "Create Account";
+
+        formSubtitle.innerText =
+        "Sign up to start using DigiLibrary";
+
+        signupField.style.display = "flex";
+
+        loginForm.querySelector("button[type='submit']")
+        .innerText = "Sign Up";
+
+        switchForm.innerText = "Login";
+
+        document.querySelector(".switch-text")
+        .childNodes[0].textContent =
+        "Already have an account? ";
+
+    }else{
+
+        formTitle.innerText = "Welcome Back!";
+
+        formSubtitle.innerText =
+        "Login to access your digital library";
+
+        signupField.style.display = "none";
+
+        loginForm.querySelector("button[type='submit']")
+        .innerText = "Login";
+
+        switchForm.innerText = "Sign Up";
+
+        document.querySelector(".switch-text")
+        .childNodes[0].textContent =
+        "Don't have an account? ";
+    }
+
+});
+
+
+/* FORM SUBMIT */
+
+loginForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name =
+    document.getElementById("name").value;
+
+    let email =
+    document.getElementById("email").value;
+
+    if(isSignup){
+
+        alert(
+        "Account created successfully! 🎉\nWelcome " +
+        name
+        );
+
+    }else{
+
+        alert(
+        "Login successful! 📚\nWelcome back!"
+        );
+
+    }
+
+    loginForm.reset();
+
+});
+
+</script>
+
+</body>
+</html>

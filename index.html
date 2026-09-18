@@ -1,250 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Digital Library Portal</title>
-
-    <!-- CSS -->
+    <title>DigiLibrary | Digital Library</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
+<header>
+    <div class="logo">
+        <i class="fa-solid fa-book-open"></i> DigiLibrary
+    </div>
 
-    <header>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="books.html">Books</a>
+        <a href="categories.html">Categories</a>
+        <a href="authors.html">Authors</a>
+        <a href="about.html">About</a>
+    </nav>
 
-        <div class="logo">
+    <div class="nav-right">
+        <button id="darkMode">🌙</button>
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</header>
 
-            <i class="fa-solid fa-book-open"></i>
 
-            <h2>Digital Library</h2>
+<!-- HOME -->
+<section class="hero">
 
-        </div>
+    <div class="overlay">
 
-        <nav>
+        <p>WELCOME TO DIGILIBRARY</p>
 
-            <ul>
+        <h1>
+            Explore The World Of
+            <span>Knowledge</span>
+        </h1>
 
-                <li><a href="#">Home</a></li>
+        <p>
+            Discover books, learn new skills and
+            explore knowledge anytime, anywhere.
+        </p>
 
-                <li><a href="#books">Books</a></li>
-
-                <li><a href="#category">Category</a></li>
-
-                <li><a href="#about">About</a></li>
-
-                <li><a href="#contact">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-        <button class="login-btn">
-
-            Login
-
-        </button>
-
-    </header>
-
-    <!-- ================= HERO ================= -->
-
-    <section class="hero">
-
-        <div class="hero-text">
-
-            <h1>
-
-                Welcome To
-
-                <span>Digital Library Portal</span>
-
-            </h1>
-
-            <p>
-
-                Read thousands of Programming Books, Notes,
-                PDF and Study Material Anytime Anywhere.
-
-            </p>
-
-            <button class="explore">
-
+        <div class="hero-buttons">
+            <a href="books.html" class="primary-btn">
                 Explore Books
+            </a>
 
-            </button>
-
+            <a href="about.html" class="secondary-btn">
+                Learn More
+            </a>
         </div>
 
-    </section>
+    </div>
 
-    <!-- ================= SEARCH ================= -->
+</section>
 
-    <section class="search">
 
-        <h2>Search Your Favourite Book</h2>
+<!-- SEARCH -->
+<section class="search-section">
 
-        <input type="text"
-            id="search"
-            placeholder="Search HTML, CSS, JavaScript, Python...">
+    <h2>Find Your Favourite Book</h2>
 
-    </section>
+    <p>Search from our digital collection</p>
 
-    <!-- ================= BOOKS ================= -->
+    <div class="search-box">
+        <input
+            type="text"
+            id="homeSearch"
+            placeholder="Search books...">
 
-    <section class="books" id="books">
-
-        <h2>Featured Books</h2>
-
-        <div class="book-container">
-
-            <div class="card">
-
-                <img src="images/html.jpg">
-
-                <h3>HTML</h3>
-
-                <p>Learn HTML from Scratch.</p>
-
-                <button>Read Now</button>
-
-            </div>
-
-            <div class="card">
-
-                <img src="images/css.jpg">
-
-                <h3>CSS</h3>
-
-                <p>Master CSS with Projects.</p>
-
-                <button>Read Now</button>
-
-            </div>
-
-            <div class="card">
-
-                <img src="images/javascript.jpg">
-
-                <h3>JavaScript</h3>
-
-                <p>Modern JavaScript Guide.</p>
-
-                <button>Read Now</button>
-
-            </div>
-
-            <div class="card">
-
-                <img src="images/python.jpg">
-
-                <h3>Python</h3>
-
-                <p>Python Programming Basics.</p>
-
-                <button>Read Now</button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= CATEGORY ================= -->
-
-    <section id="category">
-
-        <h2>Categories</h2>
-
-        <div class="category-box">
-
-            <div>💻 HTML</div>
-
-            <div>🎨 CSS</div>
-
-            <div>⚡ JavaScript</div>
-
-            <div>🐍 Python</div>
-
-            <div>☕ Java</div>
-
-            <div>🖥 C++</div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about">
-
-        <h2>About Library</h2>
-
-        <p>
-
-            Digital Library Portal is an online platform where students can
-            explore books, notes and study material free of cost.
-
-        </p>
-
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact">
-
-        <h2>Contact Us</h2>
-
-        <form>
-
-            <input type="text"
-                placeholder="Your Name">
-
-            <input type="email"
-                placeholder="Your Email">
-
-            <textarea
-                placeholder="Write your message"></textarea>
-
+        <a href="books.html">
             <button>
-
-                Send Message
-
+                <i class="fa-solid fa-search"></i>
+                Search
             </button>
+        </a>
+    </div>
 
-        </form>
+</section>
 
-    </section>
 
-    <!-- ================= FOOTER ================= -->
+<!-- CATEGORIES -->
+<section class="categories">
 
-    <footer>
+    <h2>Popular Categories</h2>
 
-        <p>
+    <div class="category-container">
 
-            © 2026 Digital Library Portal | Made by Harsh Gupta
+        <div class="category-card">
+            <i class="fa-solid fa-code"></i>
+            <h3>Programming</h3>
+            <p>120+ Books</p>
+        </div>
 
-        </p>
+        <div class="category-card">
+            <i class="fa-solid fa-globe"></i>
+            <h3>Web Development</h3>
+            <p>80+ Books</p>
+        </div>
 
-    </footer>
+        <div class="category-card">
+            <i class="fa-brands fa-python"></i>
+            <h3>Python</h3>
+            <p>70+ Books</p>
+        </div>
 
-    <!-- JS -->
+        <div class="category-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Database</h3>
+            <p>60+ Books</p>
+        </div>
 
-    <script src="script.js"></script>
+    </div>
+
+</section>
+
+
+<!-- FEATURED BOOKS -->
+<section class="featured">
+
+    <div class="section-title">
+
+        <div>
+            <h2>Featured Books</h2>
+            <p>Explore our popular books</p>
+        </div>
+
+        <a href="books.html">View All Books →</a>
+
+    </div>
+
+
+    <div class="book-container">
+
+        <div class="book-card">
+
+            <img src="images/java.jpg" alt="Java Book">
+
+            <div class="book-info">
+
+                <span>Programming</span>
+
+                <h3>Java Programming</h3>
+
+                <p>James Gosling</p>
+
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+
+                <a href="books.html">Read Book</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="book-card">
+
+            <img src="images/python.jpg" alt="Python Book">
+
+            <div class="book-info">
+
+                <span>Programming</span>
+
+                <h3>Python Basics</h3>
+
+                <p>Guido van Rossum</p>
+
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+
+                <a href="books.html">Read Book</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="book-card">
+
+            <img src="images/html.jpg" alt="HTML Book">
+
+            <div class="book-info">
+
+                <span>Web Development</span>
+
+                <h3>HTML & CSS</h3>
+
+                <p>Web Development Guide</p>
+
+                <div class="rating">⭐⭐⭐⭐☆</div>
+
+                <a href="books.html">Read Book</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATISTICS -->
+<section class="stats">
+
+    <div>
+        <i class="fa-solid fa-book"></i>
+        <h2>10,000+</h2>
+        <p>Books</p>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-users"></i>
+        <h2>5,000+</h2>
+        <p>Students</p>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-pen-nib"></i>
+        <h2>500+</h2>
+        <p>Authors</p>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-clock"></i>
+        <h2>24/7</h2>
+        <p>Access</p>
+    </div>
+
+</section>
+
+
+<!-- ABOUT PREVIEW -->
+<section class="home-about">
+
+    <p class="small-title">ABOUT OUR LIBRARY</p>
+
+    <h2>Knowledge At Your Fingertips</h2>
+
+    <p>
+        DigiLibrary is a digital library portal designed
+        for students and readers. Explore programming,
+        web development, database and many other
+        educational resources.
+    </p>
+
+    <a href="about.html" class="primary-btn">
+        Learn More
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>📚 DigiLibrary</h3>
+
+    <p>Making knowledge accessible to everyone.</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-github"></i>
+    </div>
+
+    <hr>
+
+    <p>© 2026 DigiLibrary | Digital Library Portal</p>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>

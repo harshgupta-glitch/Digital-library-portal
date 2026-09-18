@@ -1,1 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>About | DigiLibrary</title>
+
+    <link rel="stylesheet"
+    href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+    <div class="logo">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        DigiLibrary
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="books.html">
+            Books
+        </a>
+
+        <a href="categories.html">
+            Categories
+        </a>
+
+        <a href="about.html"
+        class="active">
+            About
+        </a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+        <button id="darkMode">
+            🌙
+        </button>
+
+        <a href="login.html"
+        class="login-btn">
+            Login
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- PAGE TITLE -->
+
+<section class="page-title">
+
+    <h1>About DigiLibrary</h1>
+
+    <p>
+        Your digital gateway to knowledge
+    </p>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section class="home-about">
+
+    <p class="small-title">
+        ABOUT US
+    </p>
+
+    <h2>
+        Learn Without Limits
+    </h2>
+
+    <p>
+
+        DigiLibrary is a modern digital library portal
+        designed to make books and educational resources
+        easily accessible to students and readers.
+
+    </p>
+
+    <p>
+
+        Our platform provides a simple and user-friendly
+        environment where users can explore different
+        categories, discover books and improve their
+        knowledge anytime and anywhere.
+
+    </p>
+
+
+    <div class="about-features">
+
+        <div>
+
+            <i class="fa-solid fa-book"></i>
+
+            <h3>
+                Large Collection
+            </h3>
+
+            <p>
+                Explore books from different subjects.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h3>
+                Easy Access
+            </h3>
+
+            <p>
+                Access your library from anywhere.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <i class="fa-solid fa-user-graduate"></i>
+
+            <h3>
+                Student Friendly
+            </h3>
+
+            <p>
+                Designed especially for learners.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT US -->
+
+<section class="contact-section">
+
+    <div class="contact-heading">
+
+        <p class="small-title">
+            GET IN TOUCH
+        </p>
+
+        <h2>
+            Contact Us
+        </h2>
+
+        <p>
+            Have a question or suggestion?
+            We'd love to hear from you.
+        </p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <h3>
+                Let's Connect
+            </h3>
+
+            <p>
+                Feel free to contact us for any
+                questions, suggestions or feedback.
+            </p>
+
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <div>
+
+                    <h4>Email</h4>
+
+                    <p>
+                        support@digilibrary.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <div>
+
+                    <h4>Phone</h4>
+
+                    <p>
+                        +91 98765 43210
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+
+                    <h4>Location</h4>
+
+                    <p>
+                        India
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT FORM -->
+
+        <form id="contactForm"
+        class="contact-form">
+
+            <input
+            type="text"
+            placeholder="Your Name"
+            required>
+
+
+            <input
+            type="email"
+            placeholder="Your Email"
+            required>
+
+
+            <input
+            type="text"
+            placeholder="Subject"
+            required>
+
+
+            <textarea
+            placeholder="Write your message..."
+            required></textarea>
+
+
+            <button type="submit">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Send Message
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        📚 DigiLibrary
+    </h3>
+
+    <p>
+        Making knowledge accessible to everyone.
+    </p>
+
+    <hr>
+
+    <p>
+        © 2026 DigiLibrary |
+        Digital Library Portal
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert(
+        "Thank you for contacting DigiLibrary! 📩\n\n" +
+        "Your message has been received."
+    );
+
+    this.reset();
+
+});
+
+</script>
+
+
+</body>
+
+</html>

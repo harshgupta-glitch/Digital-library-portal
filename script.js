@@ -189,3 +189,86 @@ header.style.boxShadow="none";
 });
 
 console.log("Digital Library Portal Loaded Successfully");
+// ================= BOOK SEARCH =================
+
+const bookSearch = document.getElementById("bookSearch");
+const categoryFilter = document.getElementById("categoryFilter");
+const bookCards = document.querySelectorAll(".book-card");
+
+function filterBooks(){
+
+    let searchValue = bookSearch
+        ? bookSearch.value.toLowerCase()
+        : "";
+
+    let categoryValue = categoryFilter
+        ? categoryFilter.value
+        : "all";
+
+    bookCards.forEach(book => {
+
+        let title = book.querySelector("h3")
+            .innerText.toLowerCase();
+
+        let author = book.querySelector("p")
+            .innerText.toLowerCase();
+
+        let category = book.dataset.category;
+
+        let matchSearch =
+            title.includes(searchValue) ||
+            author.includes(searchValue);
+
+        let matchCategory =
+            categoryValue === "all" ||
+            category === categoryValue;
+
+        book.style.display =
+            matchSearch && matchCategory
+            ? "block"
+            : "none";
+    });
+}
+
+if(bookSearch)
+    bookSearch.addEventListener("keyup", filterBooks);
+
+if(categoryFilter)
+    categoryFilter.addEventListener("change", filterBooks);
+
+
+// ================= BOOK POPUP =================
+
+function showBook(title, author, description){
+
+    document.getElementById("modalTitle").innerText = title;
+
+    document.getElementById("modalAuthor").innerText =
+        "Author: " + author;
+
+    document.getElementById("modalDescription").innerText =
+        description;
+
+    document.getElementById("bookModal").style.display =
+        "flex";
+}
+
+function closeBook(){
+
+    document.getElementById("bookModal").style.display =
+        "none";
+}
+
+
+// Close popup by clicking outside
+
+window.addEventListener("click", function(e){
+
+    let modal = document.getElementById("bookModal");
+
+    if(e.target === modal){
+        modal.style.display = "none";
+    }
+
+});
+

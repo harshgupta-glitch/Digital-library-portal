@@ -1,1 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books | DigiLibrary</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+    <div class="logo">
+        <i class="fa-solid fa-book-open"></i>
+        DigiLibrary
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="books.html" class="active">Books</a>
+        <a href="categories.html">Categories</a>
+        <a href="authors.html">Authors</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <div class="nav-right">
+
+        <button id="darkMode">🌙</button>
+
+        <a href="login.html" class="login-btn">
+            Login
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- BOOK PAGE -->
+
+<section class="page-title">
+
+    <h1>Our Books</h1>
+
+    <p>
+        Explore our collection of educational books
+    </p>
+
+</section>
+
+
+<!-- SEARCH + FILTER -->
+
+<section class="book-search">
+
+    <input
+    type="text"
+    id="bookSearch"
+    placeholder="Search book or author...">
+
+    <select id="categoryFilter">
+
+        <option value="all">
+            All Categories
+        </option>
+
+        <option value="programming">
+            Programming
+        </option>
+
+        <option value="web">
+            Web Development
+        </option>
+
+        <option value="database">
+            Database
+        </option>
+
+    </select>
+
+</section>
+
+
+<!-- BOOKS -->
+
+<section class="all-books">
+
+    <div class="book-grid">
+
+
+        <!-- JAVA -->
+
+        <div class="book-card"
+        data-category="programming">
+
+            <img src="images/java.jpg">
+
+            <div class="book-info">
+
+                <span>Programming</span>
+
+                <h3>Java Programming</h3>
+
+                <p>James Gosling</p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <button
+                onclick="showBook('Java Programming','James Gosling','Programming language book for beginners and students.')">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PYTHON -->
+
+        <div class="book-card"
+        data-category="programming">
+
+            <img src="images/python.jpg">
+
+            <div class="book-info">
+
+                <span>Programming</span>
+
+                <h3>Python Basics</h3>
+
+                <p>Guido van Rossum</p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <button
+                onclick="showBook('Python Basics','Guido van Rossum','Learn Python programming from basic concepts to practical examples.')">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HTML -->
+
+        <div class="book-card"
+        data-category="web">
+
+            <img src="images/html.jpg">
+
+            <div class="book-info">
+
+                <span>Web Development</span>
+
+                <h3>HTML & CSS</h3>
+
+                <p>Web Development Guide</p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐☆
+                </div>
+
+                <button
+                onclick="showBook('HTML & CSS','Web Development Guide','Learn how to create beautiful websites using HTML and CSS.')">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- JAVASCRIPT -->
+
+        <div class="book-card"
+        data-category="web">
+
+            <img src="images/javascript.jpg">
+
+            <div class="book-info">
+
+                <span>Web Development</span>
+
+                <h3>JavaScript</h3>
+
+                <p>Frontend Guide</p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <button
+                onclick="showBook('JavaScript','Frontend Guide','Learn JavaScript and make your websites interactive.')">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- C++ -->
+
+        <div class="book-card"
+        data-category="programming">
+
+            <img src="images/cpp.jpg">
+
+            <div class="book-info">
+
+                <span>Programming</span>
+
+                <h3>C++ Programming</h3>
+
+                <p>Bjarne Stroustrup</p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <button
+                onclick="showBook('C++ Programming','Bjarne Stroustrup','Learn object oriented programming and C++ concepts.')">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DATABASE -->
+
+        <div class="book-card"
+        data-category="database">
+
+            <img src="images/database.jpg">
+
+            <div class="book-info">
+
+                <span>Database</span>
+
+                <h3>Database Management</h3>
+
+                <p>SQL Learning</p>
+
+                <div class="rating">
+                    ⭐⭐⭐⭐☆
+                </div>
+
+                <button
+                onclick="showBook('Database Management','SQL Learning','Learn SQL, databases, tables and database management.')">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BOOK POPUP -->
+
+<div id="bookModal" class="modal">
+
+    <div class="modal-content">
+
+        <button class="close"
+        onclick="closeBook()">×</button>
+
+        <i class="fa-solid fa-book-open modal-icon"></i>
+
+        <h2 id="modalTitle">
+            Book Name
+        </h2>
+
+        <h4 id="modalAuthor">
+            Author
+        </h4>
+
+        <p id="modalDescription">
+            Description
+        </p>
+
+        <button class="read-btn">
+            📖 Start Reading
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>📚 DigiLibrary</h3>
+
+    <p>
+        Making knowledge accessible to everyone.
+    </p>
+
+    <hr>
+
+    <p>
+        © 2026 DigiLibrary
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
